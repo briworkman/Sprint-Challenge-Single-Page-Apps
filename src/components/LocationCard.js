@@ -1,9 +1,11 @@
 import React from "react";
-import LocationsList from "./LocationsList";
+import Header from "./components/Header.js.js";
+import LocationsList from "./components/LocationsList";
 
-export default function LocationCard() {
+export default function CharacterCard() {
   return (
     <main>
+      <Header />
       <LocationsList />
     </main>
   );

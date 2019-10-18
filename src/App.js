@@ -22,7 +22,7 @@ export default function App() {
       </nav>
       <Route exact path="/" component={WelcomePage} />
       <Route path="/character-list" component={CharacterList} />
-      <Route path="/location" component={LocationsList} />
+      <Route path="/location-list" component={LocationsList} />
     </main>
   );
 }
