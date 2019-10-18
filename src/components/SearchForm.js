@@ -13,10 +13,11 @@ export default function SearchForm({
           name="search"
           type="search"
           placeholder={placeholder}
+          bsSize="lg"
           onChange={handleChange}
         />
         <Button outline color="primary" block>
-          Submit
+          Search
         </Button>
       </Form>
     </section>

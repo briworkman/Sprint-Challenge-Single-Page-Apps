@@ -7,9 +7,13 @@ export default function App() {
   return (
     <main>
       <nav>
-        <div className="nav-links">
-          <Link to="/">Home</Link>
-          <Link to="/character-list">Characters</Link>
+        <div className="links">
+          <Link to="/" className="nav-links">
+            Home
+          </Link>
+          <Link to="/character-list" className="nav-links">
+            Characters
+          </Link>
         </div>
       </nav>
       <Route exact path="/" component={WelcomePage} />

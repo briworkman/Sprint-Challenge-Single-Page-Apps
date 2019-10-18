@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
 import SearchForm from "./SearchForm";
+import styled from "styled-components";
 
 // TODO: Add useState to track data from useEffect
 const CharacterList = props => {
@@ -31,14 +31,20 @@ const CharacterList = props => {
     alert(`submitting Name: ${search}`);
   };
 
+  const Search = styled.div`
+    text-align: center;
+  `;
+
   return (
     <section className="character-list">
-      <SearchForm
-        placeholder="Search"
-        value={search}
-        handleChange={handleChange}
-        handleSubmit={handleSubmit}
-      />
+      <Search>
+        <SearchForm
+          placeholder="Search"
+          value={search}
+          handleChange={handleChange}
+          handleSubmit={handleSubmit}
+        />
+      </Search>
       {characters.map(character => (
         <CharacterDetails key={character.id} character={character} />
       ))}
@@ -48,15 +54,45 @@ const CharacterList = props => {
 
 function CharacterDetails({ character }) {
   const { name, gender, status, image } = character;
+  const Container = styled.div`
+    display: inline-block;
+    margin: 50px;
+  `;
+
+  const CharacterContainer = styled.div`
+    background-color: rgba(247, 247, 247, 0.8);
+    border: 1px solid #443e3e;
+    box-shadow: 0px 5px 20px rgb(71, 71, 71);
+    width: 400px;
+    margin: 0 auto;
+  `;
+
+  const CharacterHeading = styled.h1`
+    color: #443e3e;
+    font-weight: bold;
+    text-align: center;
+  `;
+
+  const CharacterPhoto = styled.div`
+    text-align: center;
+    border-radius: 10px;
+  `;
+
+  const CharacterInfo = styled.p`
+    color: #443e3e;
+    text-align: center;
+  `;
   return (
-    <Link to={`/components/CharacterCard`}>
-      <div className="character-card">
-        <h2>{name}</h2>
-        <img src={image} alt="Character Image" />
-        <p>{gender}</p>
-        <p>{status}</p>
-      </div>
-    </Link>
+    <Container>
+      <CharacterContainer>
+        <CharacterHeading>{name}</CharacterHeading>
+        <CharacterPhoto>
+          <img src={image} alt="Character Image" />
+        </CharacterPhoto>
+        <CharacterInfo>Gender: {gender}</CharacterInfo>
+        <CharacterInfo>Status: {status}</CharacterInfo>
+      </CharacterContainer>
+    </Container>
   );
 }
 
