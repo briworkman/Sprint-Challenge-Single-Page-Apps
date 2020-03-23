@@ -27,12 +27,19 @@ main {
 .grid-view div.card.ui {
   margin: 1.25rem;
 }
-/*
-.main-img {
-  display: block;
-  border-radius: 100%;
-  margin: 0 auto;
-} */
+
+.nav-links {
+  text-decoration: none;
+  margin: 40px;
+  color: black;
+}
+
+.search-form {
+  margin-top: -15px;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 40px;
+}
 
 header h1 {
   text-align: center;

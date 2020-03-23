@@ -1,10 +1,25 @@
 import React, { useState } from "react";
+import { Form, Input, Button } from "reactstrap";
 
-export default function SearchForm() {
- 
+export default function SearchForm({
+  placeholder,
+  handleChange,
+  handleSubmit
+}) {
   return (
     <section className="search-form">
-     // Add a search form here
+      <Form onSubmit={handleSubmit}>
+        <Input
+          name="search"
+          type="search"
+          placeholder={placeholder}
+          bsSize="lg"
+          onChange={handleChange}
+        />
+        <Button outline color="primary" block>
+          Search
+        </Button>
+      </Form>
     </section>
   );
 }
